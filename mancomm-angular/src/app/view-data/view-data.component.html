@@ -1,0 +1,37 @@
+@defer {
+
+    <div *ngIf="documentData">
+        <h1>{{ documentData.title }}</h1>
+        <ul>
+          <li *ngFor="let part of documentData.parts">
+            <strong>{{ part.partTitle }}</strong>
+            <ul>
+                <br/>
+                <li *ngFor="let section of part.sections">
+                    <ng-container *ngIf="section.sectionTitle !== 'No Section Title'">
+                        <br/>
+                        <strong>{{ section.sectionTitle }}</strong>
+                        <br/>
+                    </ng-container>
+                        
+                    <br/>
+                    <p>{{ section.content }}</p>
+                    <br/>
+                    </li>
+                <br/>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    
+} 
+@placeholder (minimum 20s) {
+    
+    <div style="position:relative; height:6.25rem; z-index:0;">
+        <ngl-spinner size="large" alternativeText="Loading..."></ngl-spinner>
+      </div>
+
+}
+
+
+    

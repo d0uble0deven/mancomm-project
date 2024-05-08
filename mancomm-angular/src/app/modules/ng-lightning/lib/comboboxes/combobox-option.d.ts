@@ -1,0 +1,31 @@
+import { OnDestroy, ElementRef, Renderer2, ChangeDetectorRef, NgZone, EventEmitter } from '@angular/core';
+import { Highlightable } from '@angular/cdk/a11y';
+import * as i0 from "@angular/core";
+export declare class NglComboboxOption implements Highlightable, OnDestroy {
+    private element;
+    private cd;
+    private ngZone;
+    value: any;
+    label: string;
+    selected: boolean;
+    disabled: boolean;
+    ariaActiveDescendant: EventEmitter<string>;
+    selectedOption: EventEmitter<NglComboboxOption>;
+    activeOption: EventEmitter<NglComboboxOption>;
+    uid: string;
+    set active(active: boolean);
+    get active(): boolean;
+    private _active;
+    private scrollTimer;
+    private disableNextScrollIntoView;
+    private destroyed;
+    constructor(element: ElementRef, cd: ChangeDetectorRef, ngZone: NgZone, renderer: Renderer2);
+    onSelectViaInteraction(evt: MouseEvent): void;
+    hover(): void;
+    setActiveStyles(): void;
+    setInactiveStyles(): void;
+    scrollIntoView(): void;
+    ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NglComboboxOption, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NglComboboxOption, "ngl-combobox-option, [nglComboboxOption]", never, { "value": "value"; "label": "label"; "selected": "selected"; "disabled": "disabled"; }, { "ariaActiveDescendant": "ariaActiveDescendant"; "selectedOption": "selectedOption"; "activeOption": "activeOption"; }, never, never, false, never>;
+}
